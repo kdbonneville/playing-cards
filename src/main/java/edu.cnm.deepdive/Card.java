@@ -26,12 +26,12 @@ public class Card {
 
   @Override
   public String toString() {
-    return rank.getSymbol() + suit.getSymbol();
+    return representation;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rank, suit);
+    return hash;
   }
 
   @Override
@@ -39,14 +39,13 @@ public class Card {
     boolean eq = false;
     if (obj == this) {
       eq = true;
-    } else if (obj instanceof Card){
+    } else if (obj instanceof Card) {
       Card other = (Card) obj;
       eq = ((hash == other.hash)
           && (rank == other.rank)
           && (suit == other.suit));
     }
     return eq;
-
-
   }
+
 }
